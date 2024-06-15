@@ -1,0 +1,2 @@
+# Watcher
+This is aiming to be either a drop in replacement for nodemon or side by side use for restarting server and base applications on file changes. For now it is still in development so even I don't know if it will turn out to be something good or useful. For now watcher only watches static files meaning you would have to manually configure the files you want to watch. This is done by editing the watchlib watch.rs file and renaming. for now it only works for unix based systems as windows is cursed. 
