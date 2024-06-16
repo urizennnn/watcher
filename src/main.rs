@@ -1,11 +1,5 @@
-// use watcher::watchlib::watch;
-//
-// fn main() {
-//     watch::start_watch("/home/Downloads");
-// }
-
-use watcher::parser::parser;
+use watcher::cli::cli;
 
 fn main() {
-    let result = parser::parse().unwrap();
+    cli::cli();
 }

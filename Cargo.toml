@@ -6,6 +6,8 @@ edition = "2021"
 [lib]
 path="src/lib.rs"
 
+[env]
+RUST_BACKTRACE=1
 
 [dependencies]
 clap = "4.5.7"            
