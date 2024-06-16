@@ -4,12 +4,8 @@ use std::path::Path;
 use std::sync::mpsc::channel;
 use std::time::Duration;
 
-fn get_home_directory() -> String {
-    std::env::var("HOME").expect("Failed to get home directory")
-}
-
-fn build_watch_path(home_dir: &str, directory: &str) -> String {
-    format!("{}/{}", home_dir, directory)
+fn build_watch_path(directory: &str) -> String {
+    format!("{}", directory)
 }
 
 fn handle_event(event: notify::Result<Event>) {
@@ -46,8 +42,7 @@ pub fn start_watch(directory: &str) {
     )
     .expect("Failed to create watcher");
 
-    let home_dir = get_home_directory();
-    let watch_dir = build_watch_path(&home_dir, directory);
+    let watch_dir = build_watch_path(directory);
     let watch_path = Path::new(&watch_dir);
 
     if !watch_path.exists() {
