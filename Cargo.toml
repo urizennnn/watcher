@@ -1,8 +1,15 @@
 [package]
-name = "watcher"
-version = "0.1.0"
-edition = "2021"
+name = "watcher"         
+version = "0.1.0"      
+edition = "2021"        
+
+[lib]
+path="src/lib.rs"
+
 
 [dependencies]
-clap = "4.5.7"
-notify = "6.1.1"
+clap = "4.5.7"            
+colored = "2.1.0"
+notify = "6.1.1"         
+serde = { version = "1.0.203",features = ["derive"]}
+serde_yaml = "0.9.34"    
