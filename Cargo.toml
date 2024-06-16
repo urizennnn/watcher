@@ -2,6 +2,11 @@
 name = "watcher"         
 version = "0.1.0"      
 edition = "2021"        
+
+[lib]
+path="src/lib.rs"
+
+
 [dependencies]
 clap = "4.5.7"            
 colored = "2.1.0"
