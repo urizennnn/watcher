@@ -1,0 +1,37 @@
+name: Test App
+version: 1
+description: A test app
+watch:
+  prod: node
+  dev: ts-node
+  default: dev
+  exclude:
+    - "node_modules"
+    - "target"
+  commands:
+    before: echo "Running pre-command"
+    after: echo "Running post-command"
+  debounce: 500 # milliseconds
+  log_level: info # [error, warn, info, debug] still under consideration
+  environments:
+    prod:
+      command: node
+      args: [app.js]
+      env:
+        NODE_ENV: production
+    dev:
+      command: ts-node
+      args: [app.ts]
+      env:
+        NODE_ENV: development
+  aliases:
+    build: cargo build
+    test: cargo test
+    lint: cargo fmt -- --check
+  notify_on_success: true
+  notify_on_failure: true
+  ignore_patterns:
+    - "*.tmp"
+    - "*.log"
+  color_output: true
+

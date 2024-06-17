@@ -7,6 +7,10 @@ pub fn cli() {
         .version("0.0.1")
         .author("urizen")
         .about("A file watcher used to restart applications on changes.")
+        .arg(Arg::new("dev").long("dev").conflicts_with("prod"))
+        .about("Run in development mode according to the config.")
+        .arg(Arg::new("prod").long("prod").conflicts_with("dev"))
+        .about("Run in production mode according to the config.")
         .arg(Arg::new("directory").index(1).required(false))
         .get_matches();
 
