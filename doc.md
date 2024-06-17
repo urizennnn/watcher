@@ -176,4 +176,3 @@ watch:
     - "*.log"
   color_output: true
 ```
-
